@@ -1,0 +1,284 @@
+/* start root */
+:root {
+  --mian-color: #ff7200;
+}
+/* End root */
+/* Start Global Rules */
+body {
+  font-family: "Open Sans", sans-serif;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Midum */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* End Global Rules */
+/* Start header */
+.header {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 98px;
+}
+.header .logo {
+  color: var(--mian-color);
+  font-size: 35px;
+}
+.header .list-bar {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.header .list-bar .navbar {
+  display: flex;
+}
+@media (max-width: 767px) {
+  .header .list-bar .navbar {
+    display: none;
+  }
+}
+.header .list-bar > i {
+  color: var(--mian-color);
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .header .list-bar > i {
+    display: none;
+  }
+}
+.header .list-bar .navbar li a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 15px;
+  color: white;
+  transition: 0.3s;
+}
+.header .list-bar .navbar li:hover a {
+  color: var(--mian-color);
+}
+.header .list-bar form {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 991px) {
+  .header .list-bar form {
+    display: none;
+  }
+}
+.header .list-bar form input[type="search"] {
+  width: calc(100% -120px);
+  padding: 10px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid var(--mian-color);
+  border-right: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  outline: none;
+  caret-color: var(--mian-color);
+}
+.header .list-bar form input[type="search"]::placeholder {
+  color: white;
+}
+.header .list-bar form input[type="submit"] {
+  width: 120px;
+  padding: 10px 20px;
+  border: 1px solid var(--mian-color);
+  border-left: none;
+  background-color: var(--mian-color);
+  color: white;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
+}
+/* End header */
+/* Start Landing */
+.landing {
+  background-image: url(../images/night-sky-reflecting-on-water-surrounded-by-trees.jpg);
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  position: relative;
+}
+.landing::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to top,
+    rgb(0, 0, 0, 0.5) 50%,
+    rgb(0, 0, 0, 0.5) 50%
+  );
+}
+.landing .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  width: calc(100% - 120px);
+}
+@media (max-width: 768px) {
+  .landing .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+.landing .container .text-content {
+  flex-basis: 40%;
+  max-width: 100%;
+  font-family: "Times New Roman", Times, serif;
+}
+@media (max-width: 767px) {
+  .landing .container .text-content {
+    margin-top: 120px;
+    margin-bottom: 50px;
+  }
+}
+.landing .container .text-content h3 {
+  color: #fff;
+  top: 50%;
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+.landing .container .text-content h3 span {
+  color: var(--mian-color);
+}
+.landing .container .text-content p {
+  color: #aaa;
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+@media (max-width: 767px) {
+  .landing .container .text-content h3 {
+    font-size: 35px;
+  }
+  .landing .container .text-content p {
+    font-size: 13px;
+  }
+}
+.landing .container .text-content .btn {
+  color: #333;
+  background-color: #ff7200;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.landing .container .login {
+  width: 250px;
+  background-color: rgb(0, 0, 0, 0.7);
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  max-width: 100%;
+}
+.landing .container .login h3 {
+  max-width: 100%;
+  color: var(--mian-color);
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.landing .container .login .email,
+.landing .container .login .pass {
+  width: 100%;
+  background-color: transparent;
+  outline: none;
+  padding: 10px;
+  border: none;
+  color: #fff;
+  border-bottom: 1px solid var(--mian-color);
+  margin-bottom: 10px;
+}
+.landing .container .login .email::placeholder,
+.landing .container .login .pass::placeholder {
+  color: #fff;
+}
+.landing .container .login input:last-child {
+  background-color: var(--mian-color);
+  border: 1px solid black;
+  padding: 5px 30px;
+  border-radius: 10px;
+  font-size: 18px;
+  width: 100%;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 15px;
+}
+.landing .container .login p:first-of-type {
+  color: #fff;
+  margin-top: 20px;
+}
+@media (max-width: 767px) {
+  .landing .container .login p:first-of-type {
+    margin-top: 10px;
+  }
+}
+.landing .container .login p:last-of-type {
+  color: #fff;
+  font-family: "Times New Roman", Times, serif;
+}
+.landing .container .login p:last-of-type a {
+  text-decoration: none;
+  color: var(--mian-color);
+}
+.landing .container .login .icons {
+  color: #fff;
+}
+.landing .container .login .icons i {
+  margin-top: 15px;
+  margin-left: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.landing .container .login .icons i:hover {
+  color: var(--mian-color);
+}
+/* End Landing */
